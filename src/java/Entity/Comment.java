@@ -1,5 +1,7 @@
 package Entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Comment {
@@ -9,14 +11,16 @@ public class Comment {
     private Date dateModify;
 
     public Comment() {
+
     }
 
-    public Comment(int commentId, int postId, int userId, String content, Date dateModify) {
+    public Comment(int commentId, int postId, int userId, String content, Date dateModify) throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("MMM dd, yyyy at hh:mm aa");
         this.commentId = commentId;
         this.postId = postId;
         this.userId = userId;
         this.content = content;
-        this.dateModify = dateModify;
+        this.dateModify = format.parse(dateModify.toString());
     }
 
     public int getCommentId() {
