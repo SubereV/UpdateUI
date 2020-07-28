@@ -16,8 +16,40 @@ import org.apache.struts2.ServletActionContext;
  */
 public class EditInforByUser extends ActionSupport {
 
-    private String id, q1_name, email, password, description;
+    private String id, q1_name, email, password, description, avatar, fbLink, address, major;
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getFbLink() {
+        return fbLink;
+    }
+
+    public void setFbLink(String fbLink) {
+        this.fbLink = fbLink;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+    
     public String getId() {
         return id;
     }
@@ -69,13 +101,17 @@ public class EditInforByUser extends ActionSupport {
         email = user.getEmail();
         description = user.getDescription();
         password = user.getPassword();
+        avatar = user.getAvatar(); 
+        address = user.getAdress(); 
+        fbLink = user.getFbLink(); 
+        major = user.getMajor(); 
         return SUCCESS;
     }
 
     public String editInfo() throws Exception {
         UserDAO dao = new UserDAO(); 
 
-        int rc = dao.updateUser(Integer.parseInt(id), q1_name, email, 1, password, description);
+        int rc = dao.updateUser(Integer.parseInt(id), q1_name, email, 1, password, description, avatar, fbLink, address, major);
         if (rc>0) {
             return SUCCESS; 
         }

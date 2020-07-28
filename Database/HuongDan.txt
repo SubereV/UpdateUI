@@ -1,0 +1,15 @@
+A. Nhập dữ liệu mẫu vào các bảng theo thứ tự:
+- Bảng roles: thêm mô tả cho 2 chức năng
+- Bảng users: thêm đủ 20 user
+- Bảng Category: ko cần sử dụng
+- Bảng Post: mỗi category phải có ít nhất 10 post, content giống nhau đc nhưng tiêu đề phải khác nhau,
+- Location khác nhau (Tên thành phố và đủ 4 châu lục)
+- Bảng contact: thêm 30 contact
+- Bảng comment: Mỗi post phải có ít nhất 2 comment
+
+B. Hướng Dẫn Import Database và Export Database:
+1. Import:
+Chạy lệnh Create database Fancy_Blog ở dòng đầu tiền trước
+Chọn hết những dòng còn lại và excute.
+2. Export:
+link: https://truonggiangit.com/huong-dan-chuyen-database-tu-may-nay-sang-may-khac-sql-server/

@@ -40,7 +40,16 @@ public class PostAction extends ActionSupport {
     private String location;
     private String url;
     private int cate;
+    private String backGround; 
 
+    public String getBackGround() {
+        return backGround;
+    }
+
+    public void setBackGround(String backGround) {
+        this.backGround = backGround;
+    }
+    
     public String getKeyword() {
         return keyword;
     }
@@ -180,14 +189,6 @@ public class PostAction extends ActionSupport {
         this.id = id;
     }
 
-    public String addNew() throws Exception {
-        user = (User) ActionContext.getContext().getSession().get("user");
-        int check = dao.addNewPost(user.getUserId(), post.getTitle(), post.getContent(), post.getCategoryId(), post.getLocation());
-        if (check > 0) {
-            return SUCCESS;
-        }
-        return "fail";
-    }
 
     public String read() throws Exception {
         post = dao.searchById(id);
@@ -214,7 +215,7 @@ public class PostAction extends ActionSupport {
         System.out.println(cid);
         int uid = ((User) ActionContext.getContext().getSession().get("user")).getUserId();
 
-        if (dao.updatePost(id, title, content, cate, location) > 0) {
+        if (dao.updatePost(id, title, content, cate, location, backGround) > 0) {
 //            dao.updatePost(uid, uid, title, content, location, cid, location)
             return SUCCESS;
         }

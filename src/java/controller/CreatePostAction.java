@@ -19,7 +19,7 @@ public class CreatePostAction extends ActionSupport {
     String title;
     String content;
     int cate;
-    String location;
+    String location, backGround;
     String url1; 
     public CreatePostAction() {
     }
@@ -27,13 +27,22 @@ public class CreatePostAction extends ActionSupport {
     public String execute() throws Exception {
         User user = (User) ActionContext.getContext().getSession().get("user");
         PostDAO pdao = new PostDAO();
-        if (user != null && pdao.addNewPost(user.getUserId(), title, content, cate, location) > 0) {
+        if (user != null && pdao.addNewPost(user.getUserId(), title, content, cate, location, backGround) > 0) {
             url1 = "wall?id="+ user.getUserId(); 
             return SUCCESS;
         }
         return "failure";
     }
 
+    public String getBackGround() {
+        return backGround;
+    }
+
+    public void setBackGround(String backGround) {
+        this.backGround = backGround;
+    }
+    
+    
     public String getUrl1() {
         return url1;
     }

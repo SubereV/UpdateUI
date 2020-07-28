@@ -49,7 +49,7 @@
                         <i class="far fa-envelope"></i>
                     </a>
                     <div class="main">
-                        <div class="image"> <img src="image/nmhieu.jpg"width="102" height="102">
+                        <div class="image"> <img src="${blogger.avatar}"width="102" height="102">
                             <div class="hover">
                                 <i class="fas fa-camera fa-2x"></i>
                             </div>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="icons-container">
                             <!--    <a href="#" class="icon"> -->
-                            <a href="https://www.facebook.com/profile.php?id=100045452231544" class="icon">
+                            <a href="${blogger.fbLink}" class="icon">
                                 <i class="fab fa-facebook"></i>
                             </a>
                             <a href="https://www.instagram.com/nmhieu2902/?hl=vi" class="icon">
