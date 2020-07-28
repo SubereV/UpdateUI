@@ -64,7 +64,7 @@
                     <div class="col-lg-8 posts-list">
                         <div class="single-post">
                             <div class="feature-img">
-                                <img class="img-fluid" src="img/blog/single_blog_1.png" alt="">
+                                <img class="img-fluid" src="${post.background}" alt="">
                             </div>
                             <div class="blog_details">
                                 <h2>${post.title}
@@ -221,42 +221,17 @@
                             <aside class="single_sidebar_widget post_category_widget">
                                 <h4 class="widget_title">Category</h4>
                                 <ul class="list cat-list">
-                                    <li>
-                                        <a href="#" class="d-flex">
-                                            <p>Resaurant food</p>
-                                            <p>(37)</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex">
-                                            <p>Travel news</p>
-                                            <p>(10)</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex">
-                                            <p>Modern technology</p>
-                                            <p>(03)</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex">
-                                            <p>Product</p>
-                                            <p>(11)</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex">
-                                            <p>Inspiration</p>
-                                            <p>(21)</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex">
-                                            <p>Health Care</p>
-                                            <p>(21)</p>
-                                        </a>
-                                    </li>
+                                    <c:forEach items="${parentList}" var="parent">
+                                        <li>
+                                            <a href="Category?cate=${parent.categoryId}" class="d-flex"><p>${parent.getName()}</p></a>
+                                        </li>
+                                        <c:forEach items="${dao.findChildrenCategories(parent)}" var="child">
+                                            <li>
+                                                <a href="Category?cate=${child.categoryId}" class="d-flex"><p>${child.getName()}</p></a>
+                                            </li>
+                                        </c:forEach>
+                                    </c:forEach>
+                                  
                                 </ul>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">

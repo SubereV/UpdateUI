@@ -58,18 +58,18 @@
                                         </c:when>
                                         <c:otherwise>
                                             <ul>
-                                            <li class="main-menu d-none d-lg-block">
-                                                <i class="fa fa-user-circle-o fa-2x" data-toggle="dropdown"></i>
-                                                <ul class="submenu">
-                                                    <li>${session.user.name}</li> 
-                                                    <li><a href="createPost">Create Post</a></li>
-                                                    <li><a href="profile?id=${session.user.userId}">Profile</a></li>
-                                                        <c:if test="${session.user.permission == '1'}">
-                                                        <li><a href="admin">Admin</a></li>
-                                                        </c:if>
-                                                    <li><a href="logout">Log Out</a></li>
-                                                </ul> 
-                                            </li>
+                                                <li class="main-menu d-none d-lg-block">
+                                                    <i class="fa fa-user-circle-o fa-2x" data-toggle="dropdown"></i>
+                                                    <ul class="submenu">
+                                                        <li>${session.user.name}</li> 
+                                                        <li><a href="createPost">Create Post</a></li>
+                                                        <li><a href="profile?id=${session.user.userId}">Profile</a></li>
+                                                            <c:if test="${session.user.permission == '1'}">
+                                                            <li><a href="admin">Admin</a></li>
+                                                            </c:if>
+                                                        <li><a href="logout">Log Out</a></li>
+                                                    </ul> 
+                                                </li>
                                             </ul
                                         </c:otherwise>
                                     </c:choose>
