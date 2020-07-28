@@ -16,8 +16,40 @@ import org.apache.struts2.ServletActionContext;
  */
 public class EditInforByUser extends ActionSupport {
 
-    private String id, q1_name, email, password, description;
+    private String id, q1_name, email, password, description, avatar, fbLink, address, major;
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getFbLink() {
+        return fbLink;
+    }
+
+    public void setFbLink(String fbLink) {
+        this.fbLink = fbLink;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+    
     public String getId() {
         return id;
     }

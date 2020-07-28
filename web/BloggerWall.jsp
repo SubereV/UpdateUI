@@ -77,7 +77,7 @@
                                     <c:forEach items="${wall}" var="post">
                                         <article class="blog_item">
                                             <div class="blog_item_img">
-                                                <img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt="">
+                                                <img class="card-img rounded-0" src="${post.backGround}" alt="">
                                                 <a href="#" class="blog_item_date">
                                                     <h3>${post.dateModify.split("/")[0]}</h3>
                                                     <p class="month">${post.dateModify.split("/")[1]}</p>

@@ -7,6 +7,9 @@ package controller;
 
 import DAO.UserDAO;
 import Entity.User;
+import static com.opensymphony.xwork2.Action.ERROR;
+import static com.opensymphony.xwork2.Action.NONE;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import org.apache.struts2.ServletActionContext;
@@ -19,7 +22,7 @@ public class AdminAction extends ActionSupport {
 
     private ArrayList<User> userList;
     private UserDAO dao;
-    private String name, email, password, description;
+    private String name, email, password, description, avatar, address, fbLink, major;
     private int permission, userId;
 
     public ArrayList<User> getUserList() {
@@ -31,7 +34,7 @@ public class AdminAction extends ActionSupport {
     }
 
     public String editUser() throws Exception {
-        if (dao.updateUser(userId, name, email, permission, password, description) > 0) {
+        if (dao.updateUser(userId, name, email, permission, password, description, avatar, fbLink, address, major) > 0) {
             return SUCCESS;
         }
         return NONE;
@@ -65,6 +68,38 @@ public class AdminAction extends ActionSupport {
         return ERROR;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getFbLink() {
+        return fbLink;
+    }
+
+    public void setFbLink(String fbLink) {
+        this.fbLink = fbLink;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+    
     public UserDAO getDao() {
         return dao;
     }

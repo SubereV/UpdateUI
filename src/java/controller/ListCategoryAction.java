@@ -72,8 +72,6 @@ public class ListCategoryAction extends ActionSupport {
             return ERROR;
         }
 
-    
-
     public PostDAO getPdao() {
         return pdao;
     }
