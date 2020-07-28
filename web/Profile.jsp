@@ -49,11 +49,7 @@
                         <i class="far fa-envelope"></i>
                     </a>
                     <div class="main">
-<<<<<<< HEAD
-                        <div class="image"> <img src="image/nmhieu.jpg"width="102" height="102">
-=======
                         <div class="image"> <img src="${blogger.avatar}"width="102" height="102">
->>>>>>> parent of d107aee... Merge branch 'master' of https://github.com/SubereV/UpdateUI
                             <div class="hover">
                                 <i class="fas fa-camera fa-2x"></i>
                             </div>

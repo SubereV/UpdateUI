@@ -121,4 +121,5 @@ public class ListCategoryAction extends ActionSupport {
         this.post = post;
     }
 
+    
 }
