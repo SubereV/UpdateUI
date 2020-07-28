@@ -10,8 +10,6 @@
 /*
 Fix to show in full screen demo
 */
-<<<<<<< HEAD
-=======
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -35,7 +33,6 @@ Fix to show in full screen demo
     color: white;
 }
 
->>>>>>> parent of d107aee... Merge branch 'master' of https://github.com/SubereV/UpdateUI
 iframe
 {
     height:700px !important;

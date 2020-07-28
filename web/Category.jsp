@@ -83,125 +83,19 @@
                                                 </a>
                                             </div>
 
-
                                             <div class="blog_details">
                                                 <a class="d-inline-block" href="post?id=${post.postId}">
                                                     <h2>${post.title}</h2>
                                                 </a>
                                                 <p class="shorten">${post.content}</p>
                                                 <ul class="blog-info-link">
-                                                    <li><a href="#"><i class="fa fa-user"></i>${ud.searchByID(post.userId).name}</a></li>
+                                                    <li><a href=""><i class="fa fa-user"></i>${ud.searchByID(post.userId).name}</a></li>
                                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                                 </ul>
-                                            <div class="desc">
-                                                <p class="comment">
-                                                    ${comment.content}
-                                                </p>
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="d-flex align-items-center">
-                                                        <h5>
-                                                            <a href="profile?id=${comment.userId}">${ud.searchByID(comment.userId).name}</a>
-                                                        </h5>
-                                                        <p class="date">${comment.dateModify.toGMTString()}</p>
-                                                    </div>
-                                                    <c:if test="${session.user.userId eq comment.userId || admin}" >
-                                                        <div class="reply-btn">
-                                                            <a href="#" class="btn-reply text-uppercase">delete</a>
-                                                        </div>
-                                                    </c:if>
-                                                </div>
-
                                             </div>
                                         </c:forEach>
                                     </c:otherwise>
                                 </c:choose>
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_2.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_3.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_4.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_5.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
 
                                 <nav class="blog-pagination justify-content-center d-flex">
                                     <ul class="pagination">
@@ -223,24 +117,6 @@
                                         </li>
                                     </ul>
                                 </nav>
-                </div>
-                            </c:forEach>
-                        <div class="comment-form">
-                            <h4>Leave a Reply</h4>
-                            <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                                      placeholder="Write Comment"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
-                                </div>
-                            </form>
-
                         </div>
                     </div>
                     <div class="col-lg-4">

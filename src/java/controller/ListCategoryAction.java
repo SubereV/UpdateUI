@@ -62,6 +62,8 @@ public class ListCategoryAction extends ActionSupport {
         if (post != null) {
             return SUCCESS;
         }
+        return ERROR;
+    }
 
     public PostDAO getPdao() {
         return pdao;
@@ -118,6 +120,5 @@ public class ListCategoryAction extends ActionSupport {
     public void setPost(Post post) {
         this.post = post;
     }
-    
-    
+
 }
