@@ -1,12 +1,14 @@
 <%-- 
-    Document   : wall
-    Created on : Jul 25, 2020, 9:24:51 AM
+    Document   : ReadPost
+    Created on : Jul 27, 2020, 5:18:24 PM
     Author     : kinvo
 --%>
 
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "s" uri="/struts-tags"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -38,9 +40,8 @@
 
     <body>
         <!--[if lte IE 9]>
-                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-            <![endif]-->
-
+                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+             <![endif]-->
         <!-- header-start -->
         <jsp:include page="components/NavigationBar.jsp" />
         <!-- header-end -->
@@ -51,7 +52,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="bradcam_text text-center">
-                            <h3>${curentCate.name}</h3>
+                            <h3>Single blog</h3>
+                            <p>Pixel perfect design with awesome contents</p>
                         </div>
                     </div>
                 </div>
@@ -59,11 +61,11 @@
         </div>
         <!--/ bradcam_area  -->
 
-
         <!--================Blog Area =================-->
-        <section class="blog_area section-padding">
+        <section class="blog_area single-post-area section-padding">
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
                             <c:choose>
@@ -81,130 +83,207 @@
                                                     <h3>${post.dateModify.split("/")[0]}</h3>
                                                     <p class="month">${post.dateModify.split("/")[1]}</p>
                                                 </a>
-                                            </div>
-
-                                            <div class="blog_details">
-                                                <a class="d-inline-block" href="post?id=${post.postId}">
-                                                    <h2>${post.title}</h2>
-                                                </a>
-                                                <p class="shorten">${post.content}</p>
-                                                <ul class="blog-info-link">
-                                                    <li><a href="#"><i class="fa fa-user"></i>${ud.searchByID(post.userId).name}</a></li>
-                                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                                </ul>
-                                            </div>
-                                        </c:forEach>
-                                    </c:otherwise>
-                                </c:choose>
-                                
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_2.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_3.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_4.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="img/blog/single_blog_5.png" alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>15</h3>
-                                            <p>Jan</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="blog_details">
-                                        <a class="d-inline-block" href="single-blog.html">
-                                            <h2>Google inks pact for new 35-storey office</h2>
-                                        </a>
-                                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                            he earth it first without heaven in place seed it second morning saying.</p>
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <nav class="blog-pagination justify-content-center d-flex">
-                                    <ul class="pagination">
-                                        <li class="page-item">
-                                            <a href="#" class="page-link" aria-label="Previous">
-                                                <i class="ti-angle-left"></i>
+                    <div class="col-lg-8 posts-list">
+                        <div class="single-post">
+                            <div class="feature-img">
+                                <img class="img-fluid" src="img/blog/single_blog_1.png" alt="">
+                            </div>
+                            <div class="blog_details">
+                                <h2>${post.title}
+                                </h2>
+                                <ul class="blog-info-link mt-3 mb-4">
+                                    <li><a href="#"><i class="fa fa-user"></i> ${ud.searchByID(post.userId).name}</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                                <p class="excert">
+                                    ${post.content}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="navigation-top">
+                            <div class="d-sm-flex justify-content-between text-center">
+                                <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
+                                    people like this</p>
+                                <div class="col-sm-4 text-center my-2 my-sm-0">
+                                    <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                                </div>
+                                <ul class="social-icons">
+                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="navigation-area">
+                                <div class="row">
+                                    <div
+                                        class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img class="img-fluid" src="img/post/preview.png" alt="">
                                             </a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a href="#" class="page-link">1</a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a href="#" class="page-link">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a href="#" class="page-link" aria-label="Next">
-                                                <i class="ti-angle-right"></i>
+                                        </div>
+                                        <div class="arrow">
+                                            <a href="#">
+                                                <span class="lnr text-white ti-arrow-left"></span>
                                             </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                        </div>
+                                        <div class="detials">
+                                            <p>Prev Post</p>
+                                            <a href="#">
+                                                <h4>Space The Final Frontier</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div 
+                                        class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                                        <div class="detials">
+                                            <p>Next Post</p>
+                                            <a href="#">
+                                                <h4>Telescopes 101</h4>
+                                            </a>
+                                        </div>
+                                        <div class="arrow">
+                                            <a href="#">
+                                                <span class="lnr text-white ti-arrow-right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img class="img-fluid" src="img/post/next.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-author">
+                            <div class="media align-items-center">
+                                <img src="img/blog/author.png" alt="">
+                                <div class="media-body">
+                                    <a href="#">
+                                        <h4>Harvard milan</h4>
+                                    </a>
+                                    <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
+                                        our dominion twon Second divided from</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments-area">
+                            <h4 id="comment-count">05 Comments</h4>
+                            <c:forEach items="${commentOnPost}" var="comment">
+                                <div class="comment-list">
+                                    <div class="single-comment justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div class="thumb">
+                                                <img src="img/comment/comment_1.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <p class="comment">
+                                                    ${comment.content}
+                                                </p>
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <h5>
+                                                            <a href="profile?id=${comment.userId}">${ud.searchByID(comment.userId).name}</a>
+                                                        </h5>
+                                                        <p class="date">${comment.dateModify}</p>
+                                                    </div>
+                                                    <c:if test="${session.user.userId eq comment.userId || admin}" >
+                                                        <div class="reply-btn">
+                                                            <a href="#" class="btn-reply text-uppercase">delete</a>
+                                                        </div>
+                                                    </c:if>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+
+                            <div class="comment-list">
+                                <div class="single-comment justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="thumb">
+                                            <img src="img/comment/comment_2.png" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <p class="comment">
+                                                Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                                                Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <h5>
+                                                        <a href="#">Emilly Blunt</a>
+                                                    </h5>
+                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                                </div>
+                                                <div class="reply-btn">
+                                                    <a href="#" class="btn-reply text-uppercase">reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-list">
+                                <div class="single-comment justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="thumb">
+                                            <img src="img/comment/comment_3.png" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <p class="comment">
+                                                Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                                                Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <h5>
+                                                        <a href="#">Emilly Blunt</a>
+                                                    </h5>
+                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                                </div>
+                                                <div class="reply-btn">
+                                                    <a href="#" class="btn-reply text-uppercase">reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-form">
+                            <h4>Leave a Reply</h4>
+                            <form class="form-contact comment_form" action="#" id="commentForm">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                                      placeholder="Write Comment"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control" name="name" id="name" type="text" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control" name="email" id="email" type="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -214,8 +293,7 @@
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder='Search Keyword'
-                                                   onfocus="this.placeholder = ''"
-                                                   onblur="this.placeholder = 'Search Keyword'">
+                                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
                                             <div class="input-group-append">
                                                 <button class="btn" type="button"><i class="ti-search"></i></button>
                                             </div>
@@ -225,7 +303,6 @@
                                             type="submit">Search</button>
                                 </form>
                             </aside>
-
                             <aside class="single_sidebar_widget post_category_widget">
                                 <h4 class="widget_title">Category</h4>
                                 <ul class="list cat-list">
@@ -256,18 +333,17 @@
                                     <li>
                                         <a href="#" class="d-flex">
                                             <p>Inspiration</p>
-                                            <p>21</p>
+                                            <p>(21)</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" class="d-flex">
-                                            <p>Health Care (21)</p>
-                                            <p>09</p>
+                                            <p>Health Care</p>
+                                            <p>(21)</p>
                                         </a>
                                     </li>
                                 </ul>
                             </aside>
-
                             <aside class="single_sidebar_widget popular_post_widget">
                                 <h3 class="widget_title">Recent Post</h3>
                                 <div class="media post_item">
@@ -336,8 +412,6 @@
                                     </li>
                                 </ul>
                             </aside>
-
-
                             <aside class="single_sidebar_widget instagram_feeds">
                                 <h4 class="widget_title">Instagram Feeds</h4>
                                 <ul class="instagram_row flex-wrap">
@@ -373,11 +447,8 @@
                                     </li>
                                 </ul>
                             </aside>
-
-
                             <aside class="single_sidebar_widget newsletter_widget">
                                 <h4 class="widget_title">Newsletter</h4>
-
                                 <form action="#">
                                     <div class="form-group">
                                         <input type="email" class="form-control" onfocus="this.placeholder = ''"
@@ -392,36 +463,16 @@
                 </div>
             </div>
         </section>
-        <!--================Blog Area =================-->
+        <!--================ Blog Area end =================-->
+
 
         <!-- footer start -->
         <jsp:include page="components/footer.jsp" />
         <!--/ footer end  -->
-        <script>
-            function ellipsify(str) {
-                if (str.length > 10) {
-                    return (str.substring(0, 400) + "...");
-                } else {
-                    return str;
-                }
-            }
-            var ar = document.getElementsByClassName("shorten");
 
-            for (var i = 0; i < ar.length; i++) {
-                div = ar[i];
-                div.innerHTML = ellipsify(div.innerHTML);
-            }
-
-            var months = new Array('January', 'February', 'March',
-                    'April', 'May', 'June', 'July', 'August',
-                    'September', 'October', 'November', 'December');
-            var date = document.getElementsByClassName("month");
-            for (var i = 0; i < date.length; i++) {
-                date[i].innerHTML = months[date[i].innerHTML - 1];
-            }
-        </script>
         <!-- Modal -->
         <jsp:include page="components/modal.jsp" />
+
         <!-- JS here -->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -448,22 +499,16 @@
         <script src="js/jquery.form.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/mail-script.js"></script>
-
-        <script src="js/main.js"></script>
         <script>
-            $('#datepicker').datepicker({
-                iconsLibrary: 'fontawesome',
-                icons: {
-                    rightIcon: '<span class="fa fa-caret-down"></span>'
-                }
-            });
-            $('#datepicker2').datepicker({
-                iconsLibrary: 'fontawesome',
-                icons: {
-                    rightIcon: '<span class="fa fa-caret-down"></span>'
-                }
+                                                   var ar = document.getElementsByClassName("comment-list");
+                                                   if (ar.length != 0) {
+                                                       document.getElementById("comment-count").innerHTML = ar.length + " Comments";
+                                                   }
 
-            });
+
         </script>
+        <script src="js/main.js"></script>
+
     </body>
+
 </html>

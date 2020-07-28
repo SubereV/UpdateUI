@@ -16,7 +16,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
                                 <a href="">
-                                    <h2><img src="img/favicon.jpg" alt="">Fancy</h2>
+                                    <h2><img src="img/favicon.jpg" alt="">ancy</h2>
                                 </a>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="home">Trang chủ</a></li>
+                                        <li><a href="about.html">Trang chủ</a></li>
                                             <c:forEach items="${parentList}" var="parent">
                                             <li><a class="" href="Category?cate=${parent.categoryId}">${parent.getName()}${dao.findChildrenCategories(parent).size() > 0 ? "<i class=\"ti-angle-down\"></i>":""}</a>
                                                 <ul class="submenu">
