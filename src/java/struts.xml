@@ -23,10 +23,10 @@
             <result>Login.jsp</result>
         </action>
         <action name="404">
-            <result>template/404.jsp</result>
+            <result>components/404.jsp</result>
         </action>
         <action name="invalid">
-            <result>template/invalid.jsp</result>
+            <result>components/invalid.jsp</result>
         </action>
         
         <action name="createPost" class = "controller.ListCategoryAction" >
@@ -57,7 +57,7 @@
         </action>
         <!-- Create Post -->
         <action name="createNewPost" class = "controller.CreatePostAction">
-            <result name = "success" type="redirect">${url1}</result>
+            <result name = "success" type="redirect">${url}</result>
         </action>
         <!--List Post by Category-->
         <action name="Category" class = "controller.PostAction" method="posts">
