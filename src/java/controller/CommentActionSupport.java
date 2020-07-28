@@ -31,7 +31,7 @@ public class CommentActionSupport extends ActionSupport {
         if (cmtdao.addNewComment(id, cmtContent, user.getUserId()) > 0) {
             return SUCCESS;
         }
-        return ERROR;
+        return "failure";
 
     }
 

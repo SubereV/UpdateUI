@@ -75,7 +75,7 @@
                                 </h2>
                                 <ul class="blog-info-link mt-3 mb-4">
                                     <li><a href="profile?id=${post.userId}"><i class="fa fa-user"></i> ${ud.searchByID(post.userId).name}</a></li>
-                                    <li><a href="#comment-count"><i class="fa fa-comments"></i> 0 Comments</a></li>
+                                    <li><a href="#comment-count" id="comment1"><i class="fa fa-comments"></i> 0 Comments</a></li>
                                 </ul>
                                 <p class="excert">
                                     ${post.content}
@@ -106,14 +106,14 @@
                                             </a>
                                         </div>
                                         <div class="arrow">
-                                            <a href="#">
+                                            <a href="post?id=${(post.postId - 1)<1?1:post.postId}">
                                                 <span class="lnr text-white ti-arrow-left"></span>
                                             </a>
                                         </div>
                                         <div class="detials">
                                             <p>Prev Post</p>
-                                            <a href="#">
-                                                <h4>Space The Final Frontier</h4>
+                                            <a href="post?id=${post.postId - 1}">
+                                                <h4>${pdao.searchById((post.postId - 1)<1?1:post.postId).name}</h4>
                                             </a>
                                         </div>
                                     </div>
@@ -121,8 +121,9 @@
                                         class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                         <div class="detials">
                                             <p>Next Post</p>
-                                            <a href="#">
-                                                <h4>Telescopes 101</h4>
+                                            <a href="">
+                                                <h4>${pdao.searchById(
+                                                      post.postId + 1).name}</h4>
                                             </a>
                                         </div>
                                         <div class="arrow">
@@ -131,7 +132,7 @@
                                             </a>
                                         </div>
                                         <div class="thumb">
-                                            <a href="#">
+                                            <a href="post?id=${(post.postId + 1)}">
                                                 <img class="img-fluid" src="img/post/next.png" alt="">
                                             </a>
                                         </div>
@@ -143,11 +144,10 @@
                             <div class="media align-items-center">
                                 <img src="img/blog/author.png" alt="">
                                 <div class="media-body">
-                                    <a href="#">
-                                        <h4>Harvard milan</h4>
+                                    <a href="profile?id=${post.userId}">
+                                        <h4>${ud.searchByID(post.userId).name}</h4>
                                     </a>
-                                    <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                                        our dominion twon Second divided from</p>
+                                    <p>${ud.searchByID(post.userId).description}</p>
                                 </div>
                             </div>
                         </div>
@@ -182,34 +182,16 @@
                                     </div>
                                 </div>
                             </c:forEach>
-                        </div>
-                        <div class="comment-form">
-                            <h4>Leave a Reply</h4>
-                            <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                                      placeholder="Write Comment"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog_right_sidebar">
-                            <aside class="single_sidebar_widget search_widget">
-                                <form action="#">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder='Search Keyword'
-                                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                                            <div class="input-group-append">
-                                                <button class="btn" type="button"><i class="ti-search"></i></button>
+
+                            <div class="comment-form">
+                                <h4>Leave a Reply</h4>
+                                <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea name="cmtContent" class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                                          placeholder="Write Comment"></textarea>
+
                                             </div>
                                         </div>
                                     </div>
@@ -340,13 +322,10 @@
                                 <h4 class="widget_title">Newsletter</h4>
                                 <form action="#">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                               onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
                                     </div>
-                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                            type="submit">Subscribe</button>
                                 </form>
-                            </aside>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -389,10 +368,11 @@
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/mail-script.js"></script>
         <script>
-                                                   var ar = document.getElementsByClassName("comment-list");
-                                                   if (ar.length != 0) {
-                                                       document.getElementById("comment-count").innerHTML = ar.length + " Comments";
-                                                   }
+            var ar = document.getElementsByClassName("comment-list");
+            if (ar.length != 0) {
+                document.getElementById("comment-count").innerHTML = ar.length + " Comments";
+                document.getElementById("comment1").innerHTML = ar.length + " Comments";
+            }
 
 
         </script>

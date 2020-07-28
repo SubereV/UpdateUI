@@ -46,7 +46,6 @@
                         <i class="far fa-envelope"></i>
                     </a>
                     <div class="main">
-
                         <div class="image"> <img src="${blogger.avatar}"width="102" height="102">
                             <div class="hover">
                                 <i class="fas fa-camera fa-2x"></i>
