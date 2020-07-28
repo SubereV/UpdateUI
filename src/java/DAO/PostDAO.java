@@ -24,6 +24,7 @@ public class PostDAO {
             if (backGround == null) {
                 backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
             }
+            String sql = "Insert into post(users_id, title, content, category, location, date_modify, background) values (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, userId);
             stmt.setString(2, title);
@@ -82,6 +83,7 @@ public class PostDAO {
             if (backGround == null) {
                 backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
             }
+            String sql = "Update post set title = ?, content = ?, category = ?, location = ?, background = ? where post_id = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, title);
             stmt.setString(2, content);

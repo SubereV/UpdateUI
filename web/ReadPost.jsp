@@ -182,6 +182,7 @@
                                     </div>
                                 </div>
                             </c:forEach>
+                        </div>
                         <div class="comment-form">
                             <h4>Leave a Reply</h4>
                             <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">

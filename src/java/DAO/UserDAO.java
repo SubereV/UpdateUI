@@ -97,6 +97,7 @@ public class UserDAO {
             if (avatar == null) {
                 avatar = "https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161005146/63681963-avatar-man-smiling-wearing-sunglasses-and-travel-suitcases-over-white-background-vector-illustration.jpg";
             }
+            String sql = "Update users set users_name = ?, email = ?, permission = ?, user_password = ?, description = ?, avatar = ?, fb_link = ?, address = ?, major = ? where users_id = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, name);
             stmt.setString(2, email);
