@@ -78,7 +78,7 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <label class="required">Chuyên mục</label>
+                                <label class="required">Chuyên mục:</label><br>
                                 <select name = "cate">
                                     <c:forEach items="${parentList}" var="parent">
                                         <option value ="${parent.getCategoryId()}"><p style="color:red;">${parent.getName()}</p></option>
@@ -90,8 +90,9 @@
                                     </c:forEach>
                                 </select>
                             </div>
+                            <br><br>
                             <div class="form-group">
-                                <label class="required">Nội dung</label>
+                                <label class="required">Nội dung</label><br>
                                 <textarea id="editor1" class="form-control tinymce" rows="10" cols="80" name="content">
                                            
                                 </textarea>

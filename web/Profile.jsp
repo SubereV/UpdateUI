@@ -4,10 +4,7 @@
     Author     : ADMIN
 --%>
 
-<%@page import="org.apache.struts2.ServletActionContext"%>
-<%@page import="java.util.logging.Level"%>
-<%@page import="java.util.logging.Level"%>
-<%@page import="Entity.User"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib  prefix="s" uri="/struts-tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -67,11 +64,9 @@
                         </div>
                         <div class="icons-container">
                             <!--    <a href="#" class="icon"> -->
-<<<<<<< HEAD
-                            <a href="https://www.facebook.com/profile.php?id=100045452231544" class="icon">
-=======
+
                             <a href="${blogger.fbLink}" class="icon">
->>>>>>> parent of d107aee... Merge branch 'master' of https://github.com/SubereV/UpdateUI
+
                                 <i class="fab fa-facebook"></i>
                             </a>
                             <a href="https://www.instagram.com/nmhieu2902/?hl=vi" class="icon">
