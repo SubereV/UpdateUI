@@ -62,15 +62,17 @@ public class ListCategoryAction extends ActionSupport {
         pdao = new PostDAO();
         post = pdao.searchById(id);
         dao = new CategoryDAO();
-            parentList = dao.findParentCategories();
+        parentList = dao.findParentCategories();
         if (post != null) {
             if (u.getUserId() == 1) {
                 admin = true;
             }
-            return SUCCESS;
+                return SUCCESS;
+            }
+            return ERROR;
         }
-        return ERROR;
-    }
+
+    
 
     public PostDAO getPdao() {
         return pdao;

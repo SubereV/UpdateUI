@@ -15,9 +15,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="">
-                                    <h2><img src="img/favicon.jpg" alt="">ancy</h2>
-                                </a>
+                                <a href=""
+                                    <h2><img src="img/favicon.jpg" alt="">Fancy</h2>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6">

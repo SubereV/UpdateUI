@@ -15,7 +15,6 @@ import Entity.Post;
 import Entity.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import org.apache.struts2.ServletActionContext;
 
@@ -268,7 +267,5 @@ public class PostAction extends ActionSupport {
     public void setCate(int cate) {
         this.cate = cate;
     }
-    
-    
 
 }
