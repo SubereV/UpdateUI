@@ -194,6 +194,7 @@ public class PostAction extends ActionSupport {
         if (post != null) {
             post.setContent(post.getContent().replace("\n", "<br>"));
             commentOnPost = cd.searchByPostId(id);
+            System.out.println(commentOnPost);
             return SUCCESS;
         }
         return "failure";

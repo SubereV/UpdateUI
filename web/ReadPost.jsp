@@ -65,6 +65,24 @@
         <section class="blog_area single-post-area section-padding">
             <div class="container">
                 <div class="row">
+
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            <c:choose>
+                                <c:when test="${postsByCate.isEmpty()}">
+                                    <h1 style="color: red; text-align:center">Nothing Found</h1>
+                                    <br><br>
+                                    <h4 style="text-align:center">Sorry, but nothing matched your search terms. Please try again with some different keywords.</h4>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:forEach items="${postsByCate}" var="post">
+                                        <article class="blog_item">
+                                            <div class="blog_item_img">
+                                                <img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt="">
+                                                <a href="#" class="blog_item_date">
+                                                    <h3>${post.dateModify.split("/")[0]}</h3>
+                                                    <p class="month">${post.dateModify.split("/")[1]}</p>
+                                                </a>
                     <div class="col-lg-8 posts-list">
                         <div class="single-post">
                             <div class="feature-img">
