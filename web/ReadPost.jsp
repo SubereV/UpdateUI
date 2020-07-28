@@ -182,6 +182,7 @@
                                     </div>
                                 </div>
                             </c:forEach>
+
                             <div class="comment-form">
                                 <h4>Leave a Reply</h4>
                                 <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
@@ -190,6 +191,7 @@
                                             <div class="form-group">
                                                 <textarea name="cmtContent" class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
                                                           placeholder="Write Comment"></textarea>
+
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +329,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <!--================ Blog Area end =================-->
 
