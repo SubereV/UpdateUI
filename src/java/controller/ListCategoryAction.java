@@ -9,8 +9,6 @@ import DAO.CategoryDAO;
 import DAO.PostDAO;
 import Entity.Category;
 import Entity.Post;
-import Entity.User;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 
@@ -32,7 +30,6 @@ public class ListCategoryAction extends ActionSupport {
     private int cid;
     private String location;
     private Post post;
-    private boolean admin;
 
     public CategoryDAO getDao() {
         return dao;
@@ -58,21 +55,13 @@ public class ListCategoryAction extends ActionSupport {
 
     public String editPage() {
         System.out.println(id);
-        User u = (User) ActionContext.getContext().getSession().get("user");
         pdao = new PostDAO();
         post = pdao.searchById(id);
         dao = new CategoryDAO();
         parentList = dao.findParentCategories();
         if (post != null) {
-            if (u.getUserId() == 1) {
-                admin = true;
-            }
-                return SUCCESS;
-            }
-            return ERROR;
+            return SUCCESS;
         }
-
-    
 
     public PostDAO getPdao() {
         return pdao;
@@ -129,13 +118,6 @@ public class ListCategoryAction extends ActionSupport {
     public void setPost(Post post) {
         this.post = post;
     }
-
-    public boolean isCondition() {
-        return admin;
-    }
-
-    public void setCondition(boolean condition) {
-        this.admin = condition;
-    }
-
+    
+    
 }

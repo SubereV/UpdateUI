@@ -10,7 +10,6 @@ import DAO.UserDAO;
 import Entity.Post;
 import Entity.User;
 import com.opensymphony.xwork2.ActionSupport;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import org.apache.struts2.ServletActionContext;
 

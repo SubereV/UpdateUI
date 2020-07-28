@@ -14,13 +14,18 @@ import java.util.Collections;
 public class PostDAO {
 
     //-----------------------------INSERT---------------------------------------
-    public int addNewPost(int userId, String title, String content, int categoryId, String location) {
+
+    public int addNewPost(int userId, String title, String content, int categoryId, String location, String backGround) {
         int rc = 0;
         try {
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();
             String sql = "Insert into post(users_id, title, content, category, location, date_modify) values (?, ?, ?, ?, ?, ?)";
+            if (backGround == null) {
+                backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
+            }
+            String sql = "Insert into post(users_id, title, content, category, location, date_modify, background) values (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, userId);
             stmt.setString(2, title);
@@ -28,6 +33,7 @@ public class PostDAO {
             stmt.setInt(4, categoryId);
             stmt.setString(5, location);
             stmt.setString(6, dFormate.format(date));
+            stmt.setString(7, backGround);
             rc = stmt.executeUpdate();
             conn.close();
             System.out.println("Add new post successfully!");
@@ -47,7 +53,6 @@ public class PostDAO {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("Select * from post");
             while (rs.next()) {
-
                 int postId = rs.getInt(1);
                 int userId = rs.getInt(2);
                 String title = rs.getString(3);
@@ -69,19 +74,24 @@ public class PostDAO {
     }
 
     //----------------------------UPDATE----------------------------------------
-    public int updatePost(int postId, String title, String content, int categoryId, String location) {
+    public int updatePost(int postId, String title, String content, int categoryId, String location, String backGround) {
         int rc = 0;
         try {
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();
             String sql = "Update post set title = ?, content = ?, category = ?, location = ? where post_id = ?";
+            if (backGround == null) {
+                backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
+            }
+            String sql = "Update post set title = ?, content = ?, category = ?, location = ?, background = ? where post_id = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, title);
             stmt.setString(2, content);
             stmt.setInt(3, categoryId);
             stmt.setString(4, location);
-            stmt.setInt(5, postId);
+            stmt.setString(5, backGround);
+            stmt.setInt(6, postId);
             rc = stmt.executeUpdate();
             conn.close();
             System.out.println("Update post successfully!");
@@ -196,12 +206,12 @@ public class PostDAO {
                     + "from post as p1 inner join FreeTexttable(post,(title,content), ?) as p2 "
                     + "on p1.post_id = p2.[KEY] "
                     + "where p2.rank>2 and p1.category = ? "
-                    + "order by p2.rank desc"; 
-            PreparedStatement stmt = conn.prepareStatement(sql); 
+                    + "order by p2.rank desc";
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, keyword);
             stmt.setInt(2, cateId);
-            ResultSet rs = stmt.executeQuery(); 
-            
+            ResultSet rs = stmt.executeQuery();
+
             while (rs.next()) {
                 int postId = rs.getInt(1);
                 int userId = rs.getInt(2);
@@ -213,16 +223,16 @@ public class PostDAO {
                 Date dateModify = dFormate.parse(rs.getString(8));
                 aPosts.add(new Post(postId, userId, categoryId, title, content, background, location, dateModify));
             }
-            conn.close(); 
-            System.out.println("Get posts by key word: "+ keyword+ " successfully!");
+            conn.close();
+            System.out.println("Get posts by key word: " + keyword + " successfully!");
         } catch (Exception e) {
-            System.err.println("Get posts by key word: "+ keyword+ " failure!");
+            System.err.println("Get posts by key word: " + keyword + " failure!");
             System.err.println(e);
         }
         Collections.reverse(aPosts);
-        return aPosts; 
+        return aPosts;
     }
-    
+
     public ArrayList<Post> searchByKeywordAndUser(String keyword, int aUserId) {
         ArrayList<Post> aPosts = new ArrayList<>();
         try {
@@ -232,12 +242,12 @@ public class PostDAO {
                     + "from post as p1 inner join FreeTexttable(post,(title,content), ?) as p2 "
                     + "on p1.post_id = p2.[KEY] "
                     + "where p2.rank>2 and p1.users_id = ? "
-                    + "order by p2.rank desc"; 
-            PreparedStatement stmt = conn.prepareStatement(sql); 
+                    + "order by p2.rank desc";
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, keyword);
             stmt.setInt(2, aUserId);
-            ResultSet rs = stmt.executeQuery(); 
-            
+            ResultSet rs = stmt.executeQuery();
+
             while (rs.next()) {
                 int postId = rs.getInt(1);
                 int userId = rs.getInt(2);
@@ -249,33 +259,35 @@ public class PostDAO {
                 Date dateModify = dFormate.parse(rs.getString(8));
                 aPosts.add(new Post(postId, userId, categoryId, title, content, background, location, dateModify));
             }
-            conn.close(); 
-            System.out.println("Get posts by key word: "+ keyword+ " successfully!");
+
+            conn.close();
+            System.out.println("Get posts by key word: " + keyword + " successfully!");
         } catch (Exception e) {
-            System.err.println("Get posts by key word: "+ keyword+ " failure!");
+            System.err.println("Get posts by key word: " + keyword + " failure!");
             System.err.println(e);
         }
         Collections.reverse(aPosts);
-        return aPosts; 
+        return aPosts;
     }
+
     //----------------------------Delete----------------------------------------
-    public int deletePostById(int id){
-        int rc = 0; 
+    public int deletePostById(int id) {
+        int rc = 0;
         try {
-            Connection conn = DatabaseHelper.openConnection(); 
-            String sql = "delete from post where post_id = ?"; 
-            PreparedStatement stmt = conn.prepareStatement(sql); 
+            Connection conn = DatabaseHelper.openConnection();
+            String sql = "delete from post where post_id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
-            rc = stmt.executeUpdate(); 
+            rc = stmt.executeUpdate();
             conn.close();
             System.out.println("Delete post by id successfully!");
         } catch (Exception e) {
             System.err.println("Delete post by id failure!");
             System.err.println(e);
         }
-        return rc; 
-    } 
-    
+        return rc;
+    }
+
     public static void main(String[] args) {
         PostDAO dap = new PostDAO();
         System.out.println(dap.searchByKeywordAndCate("dolor elit", 2));

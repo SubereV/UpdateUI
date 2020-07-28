@@ -131,6 +131,6 @@ public class CommentDAO {
 
     public static void main(String[] args) {
         CommentDAO cmtdao = new CommentDAO();
-        System.out.println(cmtdao.searchByPostId(5));
+        System.out.println(cmtdao.addNewComment(5, "new Comment bro", 9));
     }
 }
