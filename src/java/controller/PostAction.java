@@ -134,7 +134,7 @@ public class PostAction extends ActionSupport {
     }
 
     public String posts() {
-        int cate = Integer.parseInt(ServletActionContext.getRequest().getParameter("cate"));
+//        int cate = Integer.parseInt(ServletActionContext.getRequest().getParameter("cate"));
         String keyword = ServletActionContext.getRequest().getParameter("key");
         CategoryDAO d = new CategoryDAO();
         ud = new UserDAO();
@@ -269,5 +269,4 @@ public class PostAction extends ActionSupport {
         this.cate = cate;
     }
 
-    
 }

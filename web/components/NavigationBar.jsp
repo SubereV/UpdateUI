@@ -15,16 +15,15 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="">
-                                    <h2><img src="img/favicon.jpg" alt="">ancy</h2>
-                                </a>
+                                <a href=""
+                                    <h2><img src="img/favicon.jpg" alt="">Fancy</h2>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="about.html">Trang chủ</a></li>
+                                        <li><a href="">Trang chủ</a></li>
                                             <c:forEach items="${parentList}" var="parent">
                                             <li><a class="" href="Category?cate=${parent.categoryId}">${parent.getName()}${dao.findChildrenCategories(parent).size() > 0 ? "<i class=\"ti-angle-down\"></i>":""}</a>
                                                 <ul class="submenu">
