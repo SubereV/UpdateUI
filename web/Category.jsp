@@ -87,7 +87,9 @@
                                                 </a>
                                                 <p class="shorten">${post.content}</p>
                                                 <ul class="blog-info-link">
+
                                                     <li><a href="profile?id=${post.userId}" ><i class="fa fa-user"></i>${ud.searchByID(post.userId).name}</a></li>
+
                                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                                 </ul>
                                             </div>

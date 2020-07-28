@@ -1,10 +1,14 @@
 <%-- 
-    Document   : ReadPost1
-    Created on : Jul 28, 2020, 4:09:09 PM
+    Document   : ReadPost
+    Created on : Jul 27, 2020, 5:18:24 PM
     Author     : kinvo
 --%>
 
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -70,8 +74,8 @@
                                 <h2>${post.title}
                                 </h2>
                                 <ul class="blog-info-link mt-3 mb-4">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                    <li><a href="profile?id=${post.userId}"><i class="fa fa-user"></i> ${ud.searchByID(post.userId).name}</a></li>
+                                    <li><a href="#comment-count"><i class="fa fa-comments"></i> 0 Comments</a></li>
                                 </ul>
                                 <p class="excert">
                                     ${post.content}
@@ -113,7 +117,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div
+                                    <div 
                                         class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                         <div class="detials">
                                             <p>Next Post</p>
@@ -148,7 +152,7 @@
                             </div>
                         </div>
                         <div class="comments-area">
-                            <h4 id="comment-count">05 Comments</h4>
+                            <h4 id="comment-count">0 Comments</h4>
                             <c:forEach items="${commentOnPost}" var="comment">
                                 <div class="comment-list">
                                     <div class="single-comment justify-content-between d-flex">
@@ -178,7 +182,6 @@
                                     </div>
                                 </div>
                             </c:forEach>
-                        </div>
                         <div class="comment-form">
                             <h4>Leave a Reply</h4>
                             <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
@@ -187,11 +190,6 @@
                                         <div class="form-group">
                                             <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
                                                       placeholder="Write Comment"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input class="form-control" name="name" id="name" type="text" placeholder="Name">
                                         </div>
                                     </div>
                                 </div>
@@ -357,153 +355,11 @@
 
 
         <!-- footer start -->
-        <footer class="footer">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-6 col-lg-4 ">
-                            <div class="footer_widget">
-                                <div class="footer_logo">
-                                    <a href="#">
-                                        <img src="img/footer_logo.png" alt="">
-                                    </a>
-                                </div>
-                                <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
-                                    <a href="#">+10 367 826 2567</a> <br>
-                                    <a href="#">contact@carpenter.com</a>
-                                </p>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-pinterest"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-youtube-play"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Company
-                                </h3>
-                                <ul class="links">
-                                    <li><a href="#">Pricing</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Gallery</a></li>
-                                    <li><a href="#"> Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Popular destination
-                                </h3>
-                                <ul class="links double_links">
-                                    <li><a href="#">Indonesia</a></li>
-                                    <li><a href="#">America</a></li>
-                                    <li><a href="#">India</a></li>
-                                    <li><a href="#">Switzerland</a></li>
-                                    <li><a href="#">Italy</a></li>
-                                    <li><a href="#">Canada</a></li>
-                                    <li><a href="#">Franch</a></li>
-                                    <li><a href="#">England</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Instagram
-                                </h3>
-                                <div class="instagram_feed">
-                                    <div class="single_insta">
-                                        <a href="#">
-                                            <img src="img/instagram/1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="single_insta">
-                                        <a href="#">
-                                            <img src="img/instagram/2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="single_insta">
-                                        <a href="#">
-                                            <img src="img/instagram/3.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="single_insta">
-                                        <a href="#">
-                                            <img src="img/instagram/4.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="single_insta">
-                                        <a href="#">
-                                            <img src="img/instagram/5.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="single_insta">
-                                        <a href="#">
-                                            <img src="img/instagram/6.png" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copy-right_text">
-                <div class="container">
-                    <div class="footer_border"></div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <p class="copy_right text-center">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <jsp:include page="components/footer.jsp" />
         <!--/ footer end  -->
 
         <!-- Modal -->
-        <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="serch_form">
-                        <input type="text" placeholder="Search" >
-                        <button type="submit">search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <jsp:include page="components/modal.jsp" />
 
         <!-- JS here -->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -531,7 +387,14 @@
         <script src="js/jquery.form.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/mail-script.js"></script>
+        <script>
+                                                   var ar = document.getElementsByClassName("comment-list");
+                                                   if (ar.length != 0) {
+                                                       document.getElementById("comment-count").innerHTML = ar.length + " Comments";
+                                                   }
 
+
+        </script>
         <script src="js/main.js"></script>
 
     </body>
