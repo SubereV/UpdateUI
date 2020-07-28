@@ -128,5 +128,10 @@
             <result name="success" type="redirect">${url}</result>
             <result name="failure">#</result>
         </action>
+        <!--Contact Action-->
+        <action name = "GetContact" class = "controller.ContactAction">
+            <result name = "success" type = "chain">home</result>
+            <result name = "input" type = "chain">contact</result>
+        </action>
     </package>
 </struts>

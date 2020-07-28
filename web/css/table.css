@@ -10,15 +10,19 @@
 /*
 Fix to show in full screen demo
 */
+
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    overflow:hidden;
+    table-layout:fixed
 }
 
 #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
+    overflow:auto;
 }
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}
