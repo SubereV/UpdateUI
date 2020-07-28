@@ -1,4 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix = "s" uri="/struts-tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -25,6 +28,8 @@
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/slicknav.css">
         <link rel="stylesheet" href="css/style.css">
+
+        <link rel="stylesheet" href="css/table.css">
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
         <script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
@@ -57,62 +62,67 @@
         <!--/ bradcam_area  -->
 
         <!-- ================ contact section start ================= -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
 
 
-                        <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>UserID</th>
-                                    <th>Name</th>
-                                    <th>Permission</th>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Description</th>
-                                    <th>Date Modify</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
+        <table id="customers" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>UserID</th>
+                    <th>Name</th>
+                    <th>Permission</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Description</th>
+                    <th>Date Modify</th>
+                    <th>Avatar</th>
+                    <th>Link Facebook</th>
+                    <th>Address</th>
+                    <th>Major</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
 
-                            <tfoot>
-                                <tr>
-                                    <th>UserID</th>
-                                    <th>Name</th>
-                                    <th>Permission</th>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Description</th>
-                                    <th>Date Modify</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </tfoot>
+            <tfoot>
+                <tr>
+                    <th>UserID</th>
+                    <th>Name</th>
+                    <th>Permission</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Description</th>
+                    <th>Date Modify</th>
+                    <th>Avatar</th>
+                    <th>Link Facebook</th>
+                    <th>Address</th>
+                    <th>Major</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </tfoot>
 
-                            <tbody>
-                            <c:forEach items="${userList}" var="u">
-                                <tr>
-                                    <td>${u.userId}</td>
-                                    <td>${u.name}</td>
-                                    <td>${u.permission}</td>
-                                    <td>${u.email}</td>
-                                    <td>${u.password}</td>
-                                    <td>${u.description}</td>
-                                    <td>${u.dateModify}</td>
+            <tbody>
+                <c:forEach items="${userList}" var="u">
+                    <tr>
+                        <td>${u.userId}</td>
+                        <td>${u.name}</td>
+                        <td>${u.permission}</td>
+                        <td>${u.email}</td>
+                        <td>${u.password}</td>
+                        <td>${u.description}</td>
+                        <td>${u.dateModify}</td>
+                        <td>${u.avatar}</td>
+                        <td>${u.fbLink}</td>
+                        <td>${u.adress}</td>
+                        <td>${u.major}</td>
+                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button onclick='edit(${u})' class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button onclick='deleteU(${u.userId})' class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
 
-                                    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button onclick='edit(${u})' class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button onclick='deleteU(${u.userId})' class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- ================ contact section end ================= -->
 
         <!-- footer start -->
@@ -164,19 +174,19 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
         <script src="js/main.js"></script>
         <script>
-                                        $('#datepicker').datepicker({
-                                            iconsLibrary: 'fontawesome',
-                                            icons: {
-                                                rightIcon: '<span class="fa fa-caret-down"></span>'
-                                            }
-                                        });
-                                        $('#datepicker2').datepicker({
-                                            iconsLibrary: 'fontawesome',
-                                            icons: {
-                                                rightIcon: '<span class="fa fa-caret-down"></span>'
-                                            }
+                                $('#datepicker').datepicker({
+                                    iconsLibrary: 'fontawesome',
+                                    icons: {
+                                        rightIcon: '<span class="fa fa-caret-down"></span>'
+                                    }
+                                });
+                                $('#datepicker2').datepicker({
+                                    iconsLibrary: 'fontawesome',
+                                    icons: {
+                                        rightIcon: '<span class="fa fa-caret-down"></span>'
+                                    }
 
-                                        });
+                                });
         </script>
     </body>
 

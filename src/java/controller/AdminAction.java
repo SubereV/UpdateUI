@@ -7,9 +7,6 @@ package controller;
 
 import DAO.UserDAO;
 import Entity.User;
-import static com.opensymphony.xwork2.Action.ERROR;
-import static com.opensymphony.xwork2.Action.NONE;
-import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import org.apache.struts2.ServletActionContext;

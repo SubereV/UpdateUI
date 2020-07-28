@@ -101,13 +101,16 @@ public class EditInforByUser extends ActionSupport {
         email = user.getEmail();
         description = user.getDescription();
         password = user.getPassword();
+        avatar = user.getAvatar(); 
+        address = user.getAdress(); 
+        fbLink = user.getFbLink(); 
+        major = user.getMajor(); 
         return SUCCESS;
     }
 
     public String editInfo() throws Exception {
         UserDAO dao = new UserDAO(); 
-
-        int rc = dao.updateUser(Integer.parseInt(id), q1_name, email, 1, password, description);
+        int rc = dao.updateUser(Integer.parseInt(id), q1_name, email, 1, password, description, avatar, fbLink, address, major);
         if (rc>0) {
             return SUCCESS; 
         }

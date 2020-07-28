@@ -48,7 +48,7 @@ public class SignUpAction extends ActionSupport {
         if (!dao.checkSignUp(email)) {
             return INPUT; 
         }
-        dao.addNewUser(name, email, 2, password, null); 
+        dao.addNewUser(name, email, 2, password, null, null, null, null, null); 
         return SUCCESS; 
     }
     public String execute() throws Exception {
