@@ -57,7 +57,7 @@
         </action>
         <!-- Create Post -->
         <action name="createNewPost" class = "controller.CreatePostAction">
-            <result name = "success" type="redirect">${url1}</result>
+            <result name = "success" type="redirect">${url}</result>
         </action>
         <!--List Post by Category-->
         <action name="Category" class = "controller.PostAction" method="posts">

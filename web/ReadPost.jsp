@@ -101,12 +101,12 @@
                                     <div
                                         class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                         <div class="thumb">
-                                            <a href="#">
+                                            <a href="post?id=${post.postId - 1}">
                                                 <img class="img-fluid" src="img/post/preview.png" alt="">
                                             </a>
                                         </div>
                                         <div class="arrow">
-                                            <a href="post?id=${(post.postId - 1)<1?1:post.postId}">
+                                            <a href="post?id=${post.postId - 1}">
                                                 <span class="lnr text-white ti-arrow-left"></span>
                                             </a>
                                         </div>

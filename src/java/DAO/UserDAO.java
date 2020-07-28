@@ -94,6 +94,7 @@ public class UserDAO {
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();
+            String sql = "Update users set users_name = ?, email = ?, permission = ?, user_password = ?, description = ? where users_id = ?";
             if (avatar == null) {
                 avatar = "https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161005146/63681963-avatar-man-smiling-wearing-sunglasses-and-travel-suitcases-over-white-background-vector-illustration.jpg";
             }
