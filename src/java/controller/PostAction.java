@@ -15,6 +15,7 @@ import Entity.Post;
 import Entity.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import org.apache.struts2.ServletActionContext;
 
@@ -134,7 +135,7 @@ public class PostAction extends ActionSupport {
     }
 
     public String posts() {
-        int cate = Integer.parseInt(ServletActionContext.getRequest().getParameter("cate"));
+//        int cate = Integer.parseInt(ServletActionContext.getRequest().getParameter("cate"));
         String keyword = ServletActionContext.getRequest().getParameter("key");
         CategoryDAO d = new CategoryDAO();
         ud = new UserDAO();
@@ -194,8 +195,6 @@ public class PostAction extends ActionSupport {
         if (post != null) {
             post.setContent(post.getContent().replace("\n", "<br>"));
             commentOnPost = cd.searchByPostId(id);
-            System.out.println(commentOnPost);
-            System.out.println(commentOnPost);
             return SUCCESS;
         }
         return "failure";
@@ -269,6 +268,7 @@ public class PostAction extends ActionSupport {
     public void setCate(int cate) {
         this.cate = cate;
     }
-
     
+    
+
 }

@@ -131,7 +131,7 @@ public class CommentDAO {
 
     public static void main(String[] args) {
         CommentDAO cmtdao = new CommentDAO();
-        System.out.println(cmtdao.searchByPostId(1));
+        System.out.println(cmtdao.searchByPostId(5));
         
     }
 }

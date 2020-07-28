@@ -24,7 +24,7 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="about.html">Trang chủ</a></li>
+                                        <li><a href="">Trang chủ</a></li>
                                             <c:forEach items="${parentList}" var="parent">
                                             <li><a class="" href="Category?cate=${parent.categoryId}">${parent.getName()}${dao.findChildrenCategories(parent).size() > 0 ? "<i class=\"ti-angle-down\"></i>":""}</a>
                                                 <ul class="submenu">
