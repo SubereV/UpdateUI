@@ -182,7 +182,6 @@
                                     </div>
                                 </div>
                             </c:forEach>
-
                             <div class="comment-form">
                                 <h4>Leave a Reply</h4>
                                 <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
@@ -191,7 +190,27 @@
                                             <div class="form-group">
                                                 <textarea name="cmtContent" class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
                                                           placeholder="Write Comment"></textarea>
-
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                                type="submit">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget search_widget">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder='Search Keyword'
+                                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                            <div class="input-group-append">
+                                                <button class="btn" type="button"><i class="ti-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -212,7 +231,7 @@
                                             </li>
                                         </c:forEach>
                                     </c:forEach>
-                                  
+
                                 </ul>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">
@@ -322,13 +341,17 @@
                                 <h4 class="widget_title">Newsletter</h4>
                                 <form action="#">
                                     <div class="form-group">
-                                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                                        <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
                                     </div>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                            type="submit">Subscribe</button>
                                 </form>
-                            </div>
+                            </aside>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         <!--================ Blog Area end =================-->
 
@@ -367,11 +390,11 @@
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/mail-script.js"></script>
         <script>
-            var ar = document.getElementsByClassName("comment-list");
-            if (ar.length != 0) {
-                document.getElementById("comment-count").innerHTML = ar.length + " Comments";
-                document.getElementById("comment1").innerHTML = ar.length + " Comments";
-            }
+                                                   var ar = document.getElementsByClassName("comment-list");
+                                                   if (ar.length != 0) {
+                                                       document.getElementById("comment-count").innerHTML = ar.length + " Comments";
+                                                       document.getElementById("comment1").innerHTML = ar.length + " Comments";
+                                                   }
 
 
         </script>

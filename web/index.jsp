@@ -533,7 +533,7 @@
 
         <jsp:include page="components/footer.jsp"/>
 
-        
+
 
 
         <!-- Modal -->
@@ -569,7 +569,23 @@
         <script src="js/slick.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+        <script>
+            var warn = document.getElementById("login-warning").childNodes.length;
+            if (warn > 0) {
+                eventFire(document.getElementById('login'), 'click');
+            }
+            
 
+            function eventFire(el, etype) {
+                if (el.fireEvent) {
+                    el.fireEvent('on' + etype);
+                } else {
+                    var evObj = document.createEvent('Events');
+                    evObj.initEvent(etype, true, false);
+                    el.dispatchEvent(evObj);
+                }
+            }
+        </script>
 
         <!--contact js-->
         <script src="js/contact.js"></script>
@@ -581,12 +597,12 @@
 
         <script src="js/main.js"></script>
         <script>
-                                    $('#datepicker').datepicker({
-                                        iconsLibrary: 'fontawesome',
-                                        icons: {
-                                            rightIcon: '<span class="fa fa-caret-down"></span>'
-                                        }
-                                    });
+            $('#datepicker').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                    rightIcon: '<span class="fa fa-caret-down"></span>'
+                }
+            });
         </script>
     </body>
 

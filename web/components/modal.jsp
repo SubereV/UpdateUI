@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -28,6 +29,8 @@
                         <input type="password" name="password" id="defaultForm-pass1" class="form-control validate">
                         <label data-error="wrong" data-success="right" for="defaultForm-pass1">Your password</label>
                     </div>
+                    <s:fielderror id="login-warning" fieldName="invalid"/>
+                    <p id="new"></p>
                     <a data-toggle="modal" data-target="#modalRegisterForm" href="#">
                         Don't have any account?
                     </a>
@@ -132,3 +135,5 @@
     </div>
     <!-- /.modal-dialog --> 
 </div>
+
+
