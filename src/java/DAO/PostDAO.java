@@ -29,7 +29,7 @@ public class PostDAO {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, userId);
             stmt.setString(2, title);
-            stmt.setString(3, content);
+            stmt.setNString(3, content);
             stmt.setInt(4, categoryId);
             stmt.setString(5, location);
             stmt.setString(6, dFormate.format(date));
