@@ -17,6 +17,7 @@ public class PostDAO {
     public int addNewPost(int userId, String title, String content, int categoryId, String location, String backGround) {
         int rc = 0;
         try {
+            System.setProperty(content, "UTF-8");
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();

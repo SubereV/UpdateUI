@@ -63,14 +63,14 @@
 
         <!-- ================ contact section start ================= -->
 
-
+         <p id="display"></p>
         <br><br><br>
         <div class="row">
 
             <div class="col-md-12">
 
 
-                <table id="customers" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+                <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%" style="table-layout:fixed">
                     <thead>
                         <tr>
                             <th>UserID</th>

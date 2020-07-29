@@ -182,7 +182,7 @@
                                     </div>
                                 </div>
                             </c:forEach>
-                                placeholder="Write Comment"></textarea>
+                            placeholder="Write Comment"></textarea>
 
                             <div class="comment-form">
                                 <h4>Leave a Reply</h4>
@@ -217,26 +217,26 @@
 
                                         </div>
                                     </div>
-                                </div>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                type="submit">Search</button>
-                        </form>
-                        </aside>
-                        <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Category</h4>
-                            <ul class="list cat-list">
-                                <c:forEach items="${parentList}" var="parent">
-                                    <li>
-                                        <a href="Category?cate=${parent.categoryId}" class="d-flex"><p>${parent.getName()}</p></a>
-                                    </li>
-                                    <c:forEach items="${dao.findChildrenCategories(parent)}" var="child">
+                                    </div>
+
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                            type="submit">Search</button>
+                                </form>
+                            </aside>
+                            <aside class="single_sidebar_widget post_category_widget">
+                                <h4 class="widget_title">Category</h4>
+                                <ul class="list cat-list">
+                                    <c:forEach items="${parentList}" var="parent">
                                         <li>
-                                            <a href="Category?cate=${child.categoryId}" class="d-flex"><p>${child.getName()}</p></a>
+                                            <a href="Category?cate=${parent.categoryId}" class="d-flex"><p>${parent.getName()}</p></a>
                                         </li>
+                                        <c:forEach items="${dao.findChildrenCategories(parent)}" var="child">
+                                            <li>
+                                                <a href="Category?cate=${child.categoryId}" class="d-flex"><p>${child.getName()}</p></a>
+                                            </li>
+                                        </c:forEach>
+
                                     </c:forEach>
-
-
                                 </ul>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">
@@ -251,33 +251,33 @@
                                     </div>
 
                                 </div>
+                        </div>
+                        <div class="media post_item">
+                            <img src="img/post/post_2.png" alt="post">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>The Amazing Hubble</h3>
+                                </a>
+                                <p>02 Hours ago</p>
                             </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_2.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
+                        </div>
+                        <div class="media post_item">
+                            <img src="img/post/post_3.png" alt="post">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>Astronomy Or Astrology</h3>
+                                </a>
+                                <p>03 Hours ago</p>
                             </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_3.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
+                        </div>
+                        <div class="media post_item">
+                            <img src="img/post/post_4.png" alt="post">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>Asteroids telescope</h3>
+                                </a>
+                                <p>01 Hours ago</p>
                             </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_4.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
 
                             </aside>
                             <aside class="single_sidebar_widget tag_cloud_widget">
@@ -359,8 +359,9 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!--================ Blog Area end =================-->
+        </div>
+    </section>
+    <!--================ Blog Area end =================-->
 
 
 
@@ -391,13 +392,13 @@
     <script src="js/plugins.js"></script>
     <script src="js/gijgo.min.js"></script>
 
-        <!--contact js-->
-        <script src="js/contact.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="js/jquery.form.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script>
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script>
                                                    var ar = document.getElementsByClassName("comment-list");
                                                    if (ar.length != 0) {
                                                        document.getElementById("comment-count").innerHTML = ar.length + " Comments";
@@ -409,5 +410,4 @@
     <script src="js/main.js"></script>
 
 </body>
-
 </html>
