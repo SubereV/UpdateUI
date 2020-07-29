@@ -13,11 +13,32 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
 /**
  *
  * @author Admin
  */
 public class ContactDAO {
+    //-----------------------------INSERT---------------------------------------
+    public int addNewContact(String name, String email, String phoneNumber, String conent) {
+        int rc = 0;
+        try {
+            Connection conn = DatabaseHelper.openConnection();
+            String sql = "Insert into contact(name, email, phone_number, content) values (?, ?, ?, ?)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setString(2, email);
+            stmt.setString(3, phoneNumber);
+            stmt.setString(4, conent);
+            rc = stmt.executeUpdate();
+            conn.close();
+            System.out.println("Add new contact successfully!");
+        } catch (Exception e) {
+            System.err.println(e);
+            System.err.println("Add new contact failure!");
+        }
+        return rc;
+    }
     //------------------------------GET ALL-------------------------------------
     public ArrayList<Contact> getAllContacts(){
         ArrayList<Contact> allContacts = new ArrayList<>(); 

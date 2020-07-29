@@ -64,11 +64,15 @@
                             <input name="Id" type="text" class="form-control" id="Id" />
                         </div>
                         <div class="form-group">
-                            <label for="Name" class="required">Tiêu đề</label>
+                            <label for="Name" class="required">Tiêu đề:</label>
                             <input name="title" type="text" class="form-control" id="title" />
-                        </div>
+                        </div><br>
                         <div class="form-group">
-                            <label class="required">Vị trí</label>
+                            <label for="Name" class="required">Background:</label>
+                            <input name="backGround" type="text" class="form-control" id="title" />
+                        </div><br>
+                        <div class="form-group">
+                            <label class="required">Vị trí:</label>
                             <div id="locationField">
                                 <input id="autocomplete"
                                        name="location"

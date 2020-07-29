@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="bradcam_text text-center">
-                            <h2>Admin Page</h2>
+                            <h2 style="color: whitesmoke">Admin Page</h2>
                         </div>
                     </div>
                 </div>
@@ -64,63 +64,73 @@
         <!-- ================ contact section start ================= -->
 
 
-        <table id="customers" class="table table-striped table-bordered" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th>UserID</th>
-                    <th>Name</th>
-                    <th>Permission</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Description</th>
-                    <th>Date Modify</th>
-                    <th>Avatar</th>
-                    <th>Link Facebook</th>
-                    <th>Address</th>
-                    <th>Major</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
+        <br><br><br>
+        <div class="row">
 
-            <tfoot>
-                <tr>
-                    <th>UserID</th>
-                    <th>Name</th>
-                    <th>Permission</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Description</th>
-                    <th>Date Modify</th>
-                    <th>Avatar</th>
-                    <th>Link Facebook</th>
-                    <th>Address</th>
-                    <th>Major</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </tfoot>
+            <div class="col-md-12">
 
-            <tbody>
-                <c:forEach items="${userList}" var="u">
-                    <tr>
-                        <td>${u.userId}</td>
-                        <td>${u.name}</td>
-                        <td>${u.permission}</td>
-                        <td>${u.email}</td>
-                        <td>${u.password}</td>
-                        <td>${u.description}</td>
-                        <td>${u.dateModify}</td>
-                        <td>${u.avatar}</td>
-                        <td>${u.fbLink}</td>
-                        <td>${u.adress}</td>
-                        <td>${u.major}</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button onclick='edit(${u})' class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button onclick='deleteU(${u.userId})' class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+
+                <table id="customers" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+                    <thead>
+                        <tr>
+                            <th>UserID</th>
+                            <th>Name</th>
+                            <th>Permission</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Description</th>
+                            <th>Date Modify</th>
+                            <th>Avatar</th>
+                            <th>Link Facebook</th>
+                            <th>Address</th>
+                            <th>Major</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th>UserID</th>
+                            <th>Name</th>
+                            <th>Permission</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Description</th>
+                            <th>Date Modify</th>
+                            <th style="width:10px">Avatar</th>
+                            <th>Link Facebook</th>
+                            <th>Address</th>
+                            <th>Major</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        <c:forEach items="${userList}" var="u">
+                            <tr>
+                                <td>${u.userId}</td>
+                                <td>${u.name}</td>
+                                <td>${u.permission}</td>
+                                <td>${u.email}</td>
+                                <td>${u.password}</td>
+                                <td>${u.description}</td>
+                                <td>${u.dateModify}</td>
+                                <td style="width:10px">${u.avatar}</td>
+                                <td>${u.fbLink}</td>
+                                <td>${u.adress}</td>
+                                <td>${u.major}</td>
+                                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button onclick='edit(${u})' class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button onclick='deleteU(${u.userId})' class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
 
 
         <!-- ================ contact section end ================= -->
@@ -174,19 +184,19 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
         <script src="js/main.js"></script>
         <script>
-                                $('#datepicker').datepicker({
-                                    iconsLibrary: 'fontawesome',
-                                    icons: {
-                                        rightIcon: '<span class="fa fa-caret-down"></span>'
-                                    }
-                                });
-                                $('#datepicker2').datepicker({
-                                    iconsLibrary: 'fontawesome',
-                                    icons: {
-                                        rightIcon: '<span class="fa fa-caret-down"></span>'
-                                    }
+                                    $('#datepicker').datepicker({
+                                        iconsLibrary: 'fontawesome',
+                                        icons: {
+                                            rightIcon: '<span class="fa fa-caret-down"></span>'
+                                        }
+                                    });
+                                    $('#datepicker2').datepicker({
+                                        iconsLibrary: 'fontawesome',
+                                        icons: {
+                                            rightIcon: '<span class="fa fa-caret-down"></span>'
+                                        }
 
-                                });
+                                    });
         </script>
     </body>
 

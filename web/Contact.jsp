@@ -61,7 +61,7 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" action="GetContact" method="post" id="contactForm" novalidate="novalidate">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control" type="text" id="phone" name="phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter phone number'" placeholder="Enter phone number">
                                     </div>
                                 </div>
                             </div>
@@ -301,59 +301,59 @@
                                     });
         </script>
         <script>
-                                        /**
-                                         * Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
-                                         * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
-                                         */
+            /**
+             * Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+             * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+             */
 
-                                        /* exported initSample */
+            /* exported initSample */
 
-                                        if (CKEDITOR.env.ie && CKEDITOR.env.version < 9)
-                                            CKEDITOR.tools.enableHtml5Elements(document);
+            if (CKEDITOR.env.ie && CKEDITOR.env.version < 9)
+                CKEDITOR.tools.enableHtml5Elements(document);
 
 // The trick to keep the editor in the sample quite small
 // unless user specified own height.
-                                        CKEDITOR.config.entities_latin = false;
-                                        CKEDITOR.config.height = 350;
-                                        CKEDITOR.config.width = 'auto';
+            CKEDITOR.config.entities_latin = false;
+            CKEDITOR.config.height = 350;
+            CKEDITOR.config.width = 'auto';
 
-                                        var initSample = (function () {
-                                            var wysiwygareaAvailable = isWysiwygareaAvailable(),
-                                                    isBBCodeBuiltIn = !!CKEDITOR.plugins.get('bbcode');
+            var initSample = (function () {
+                var wysiwygareaAvailable = isWysiwygareaAvailable(),
+                        isBBCodeBuiltIn = !!CKEDITOR.plugins.get('bbcode');
 
-                                            return function () {
-                                                var editorElement = CKEDITOR.document.getById('editor');
+                return function () {
+                    var editorElement = CKEDITOR.document.getById('editor');
 
-                                                // :(((
-                                                if (isBBCodeBuiltIn) {
-                                                    editorElement.setHtml(
-                                                            'Hello world!\n\n' +
-                                                            'I\'m an instance of [url=https://ckeditor.com]CKEditor[/url].'
-                                                            );
-                                                }
+                    // :(((
+                    if (isBBCodeBuiltIn) {
+                        editorElement.setHtml(
+                                'Hello world!\n\n' +
+                                'I\'m an instance of [url=https://ckeditor.com]CKEditor[/url].'
+                                );
+                    }
 
-                                                // Depending on the wysiwygarea plugin availability initialize classic or inline editor.
-                                                if (wysiwygareaAvailable) {
-                                                    CKEDITOR.replace('editor');
-                                                } else {
-                                                    editorElement.setAttribute('contenteditable', 'true');
-                                                    CKEDITOR.inline('editor');
+                    // Depending on the wysiwygarea plugin availability initialize classic or inline editor.
+                    if (wysiwygareaAvailable) {
+                        CKEDITOR.replace('editor');
+                    } else {
+                        editorElement.setAttribute('contenteditable', 'true');
+                        CKEDITOR.inline('editor');
 
-                                                    // TODO we can consider displaying some info box that
-                                                    // without wysiwygarea the classic editor may not work.
-                                                }
-                                            };
+                        // TODO we can consider displaying some info box that
+                        // without wysiwygarea the classic editor may not work.
+                    }
+                };
 
-                                            function isWysiwygareaAvailable() {
-                                                // If in development mode, then the wysiwygarea must be available.
-                                                // Split REV into two strings so builder does not replace it :D.
-                                                if (CKEDITOR.revision == ('%RE' + 'V%')) {
-                                                    return true;
-                                                }
+                function isWysiwygareaAvailable() {
+                    // If in development mode, then the wysiwygarea must be available.
+                    // Split REV into two strings so builder does not replace it :D.
+                    if (CKEDITOR.revision == ('%RE' + 'V%')) {
+                        return true;
+                    }
 
-                                                return !!CKEDITOR.plugins.get('wysiwygarea');
-                                            }
-                                        })();
+                    return !!CKEDITOR.plugins.get('wysiwygarea');
+                }
+            })();
 
 
         </script>
