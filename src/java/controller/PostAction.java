@@ -40,7 +40,9 @@ public class PostAction extends ActionSupport {
     private String location;
     private String url;
     private int cate;
-    private String backGround; 
+    private String backGround;
+    private int cmt;
+    private boolean admin = false;
 
     public String getBackGround() {
         return backGround;
@@ -49,7 +51,7 @@ public class PostAction extends ActionSupport {
     public void setBackGround(String backGround) {
         this.backGround = backGround;
     }
-    
+
     public String getKeyword() {
         return keyword;
     }
@@ -189,7 +191,6 @@ public class PostAction extends ActionSupport {
         this.id = id;
     }
 
-
     public String read() throws Exception {
         post = dao.searchById(id);
         if (post != null) {
@@ -209,12 +210,25 @@ public class PostAction extends ActionSupport {
         }
         return ERROR;
     }
+    public String deleteCmt() {
+        CommentDAO cmtDao = new CommentDAO();
+        int postid = cmtDao.search(cmt).getPostId();
+        if (cmtDao.delCommentById(cmt) > 0) {
+            url = "post?id=" + postid;
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+  
+    
 
     public String edit() {
         System.out.println(id);
         System.out.println(cid);
         int uid = ((User) ActionContext.getContext().getSession().get("user")).getUserId();
-
+        if (uid == 1) {
+            admin = true;
+        }
         if (dao.updatePost(id, title, content, cate, location, backGround) > 0) {
 //            dao.updatePost(uid, uid, title, content, location, cid, location)
             return SUCCESS;
@@ -270,5 +284,23 @@ public class PostAction extends ActionSupport {
         this.cate = cate;
     }
 
+    public boolean isAdmin() {
+        return admin;
+    }
 
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    public int getCmt() {
+        return cmt;
+    }
+
+    public void setCmt(int cmt) {
+        this.cmt = cmt;
+    }
+
+    
+    
+    
 }

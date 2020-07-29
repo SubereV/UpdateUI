@@ -60,6 +60,29 @@ public class CommentDAO {
         return allComments;
     }
 
+    public Comment search(int id) {
+        Comment allComments = null;
+        try {
+            SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
+            Connection conn = DatabaseHelper.openConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from comment where comment_id = " + id);
+            while (rs.next()) {
+                int commentId = rs.getInt(1);
+                int postId = rs.getInt(2);
+                String content = rs.getString(3);
+                Date dateModify = dFormate.parse(rs.getString(4));
+                int userId = rs.getInt(5);
+            }
+            conn.close();
+            System.out.println("Get all comments successfully!");
+        } catch (Exception e) {
+            System.err.println(e);
+            System.err.println("Get all comments failure!");
+        }
+        return allComments;
+    }
+
     //--------------------------------UPDATE------------------------------------
     public int updateComment(int commentId, int postId, String content, Date dateModify, int userId) {
         int rc = 0;
@@ -112,7 +135,7 @@ public class CommentDAO {
     }
 
     //----------------------------Delete Comment--------------------------------
-    public static int delCommentById(int id) {
+    public int delCommentById(int id) {
         int rc = 0;
         try {
             Connection conn = DatabaseHelper.openConnection();

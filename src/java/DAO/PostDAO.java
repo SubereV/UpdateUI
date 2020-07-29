@@ -21,6 +21,7 @@ public class PostDAO {
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();
+
             if (backGround == null) {
                 backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
             }

@@ -17,7 +17,7 @@
                             <div class="logo">
 
                                 <a href="">
-                                    <h2><img src="img/favicon.jpg" alt="">Fancy</h2>
+                                    <h2><img src="img/favicon.jpg" alt="">ancy</h2>
                                 </a>
 
                             </div>

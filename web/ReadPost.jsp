@@ -89,12 +89,12 @@
                                 <div class="col-sm-4 text-center my-2 my-sm-0">
                                     <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
                                 </div>
+                                <c:if test="${session.user.userId == post.userId || admin}">
                                 <ul class="social-icons">
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a class="genric-btn success" href="editPage?id=${post.postId}">Edit</a></li>
+                                    <li><a class="genric-btn danger" href="deletePost?id=${post.postId}">Delete</a></li>
                                 </ul>
+                                </c:if>
                             </div>
                             <div class="navigation-area">
                                 <div class="row">
@@ -173,7 +173,7 @@
                                                     </div>
                                                     <c:if test="${session.user.userId eq comment.userId || admin}" >
                                                         <div class="reply-btn">
-                                                            <a href="#" class="btn-reply text-uppercase">delete</a>
+                                                            <a href="deleteCmt?cmt=${comment.commentId}" class="btn-reply text-uppercase">delete</a>
                                                         </div>
                                                     </c:if>
                                                 </div>
