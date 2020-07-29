@@ -51,7 +51,7 @@
                                     <c:choose>
                                         <c:when test="${session.user eq null}">
                                             <div class="">
-                                                <a data-toggle="modal" data-target="#modalLoginForm" href="#">
+                                                <a id="login" data-toggle="modal" data-target="#modalLoginForm" href="#">
                                                     <i class="fa fa-sign-in"> Login </i>
                                                 </a>
                                             </div>

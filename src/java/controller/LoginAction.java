@@ -31,20 +31,17 @@ public class LoginAction extends ActionSupport {
         UserDAO dao = new UserDAO();
         HttpSession session = ServletActionContext.getRequest().getSession();
         User user = dao.checkLogin(email, password);
-        if (user != null) {
-            url = "wall?id="+ user.getUserId();
-            session.setAttribute("user", user);
-            return "redirect";
-        } else {
-            message = "Wrong email or password";
-            return "fail";
-        }
+        url = "wall?id=" + user.getUserId();
+        session.setAttribute("user", user);
+        return "redirect";
     }
 
-    public String logout() {
-        Map currentSession = ActionContext.getContext().getSession();
-        currentSession.put("user", null);
-        return SUCCESS;
+    @Override
+    public void validate() {
+        UserDAO dao = new UserDAO();
+        if (dao.checkLogin(email, password) == null) {
+            addFieldError("invalid", "email or password incorrect");
+        }
     }
 
     public String direct() {

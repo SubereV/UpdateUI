@@ -50,9 +50,9 @@
         <!-- Process Login/Logout -->
         <action name="login" class="controller.LoginAction">
             <result name="redirect" type="redirect">${url}</result>
-            <result name="fail">Login.jsp</result>
+            <result name="input">index.jsp</result>
         </action>
-        <action name="logout" class="controller.LoginAction" method="logout">
+        <action name="logout" class="controller.LogoutAction">
             <result name="success" type="redirect">home</result>
         </action>
         <!-- Create Post -->
