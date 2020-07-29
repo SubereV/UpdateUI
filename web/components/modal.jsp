@@ -29,8 +29,8 @@
                         <input type="password" name="password" id="defaultForm-pass1" class="form-control validate">
                         <label data-error="wrong" data-success="right" for="defaultForm-pass1">Your password</label>
                     </div>
-                    <s:fielderror id="login-warning" fieldName="invalid"/>
-                    <p id="new"></p>
+                    <p class="warning"><s:fielderror id="login-warning" fieldName="invalid"/></p>
+                    
                     <a data-toggle="modal" data-target="#modalRegisterForm" href="#">
                         Don't have any account?
                     </a>
