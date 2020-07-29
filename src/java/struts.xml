@@ -128,6 +128,10 @@
             <result name="success" type="redirect">${url}</result>
             <result name="failure">#</result>
         </action>
+        <action name="deleteCmt" class = "controller.PostAction" method="deleteCmt">
+            <result name="success" type="redirect">${url}</result>
+            <result name="failure">404</result>
+        </action>
         <!--Contact Action-->
         <action name = "GetContact" class = "controller.ContactAction">
             <result name = "success" type = "chain">home</result>

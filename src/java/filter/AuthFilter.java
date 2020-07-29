@@ -117,33 +117,33 @@ public class AuthFilter implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
 
-//        HttpServletRequest req = (HttpServletRequest) request;
-//        HttpServletResponse res = (HttpServletResponse) response;
-////
-//        String uri = req.getRequestURI();
-//        int index = uri.lastIndexOf("/");
-//        String resource = uri.substring(index + 1);
-//        HttpSession session = req.getSession(false);
-//        if (session == null || session.getAttribute("user") == null) {
-//            if (guest.contains(resource)) {
-//                res.sendRedirect("404");
-//            } else {
-//                chain.doFilter(request, response);
-//            }
-//        } else {
-//            User u = (User) session.getAttribute("user");
-//            if (u.getPermission() == 1) {
-//                chain.doFilter(request, response);
-//            } else {
-//                if (u.getPermission() == 2 && standard.contains(resource)) {
-//                    res.sendRedirect("invalid");
-//                } else {
-//                    chain.doFilter(request, response);
-//                }
-//            }
-//        }
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+//
+        String uri = req.getRequestURI();
+        int index = uri.lastIndexOf("/");
+        String resource = uri.substring(index + 1);
+        HttpSession session = req.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            if (guest.contains(resource)) {
+                res.sendRedirect("404");
+            } else {
+                chain.doFilter(request, response);
+            }
+        } else {
+            User u = (User) session.getAttribute("user");
+            if (u.getPermission() == 1) {
+                chain.doFilter(request, response);
+            } else {
+                if (u.getPermission() == 2 && standard.contains(resource)) {
+                    res.sendRedirect("invalid");
+                } else {
+                    chain.doFilter(request, response);
+                }
+            }
+        }
         //uncomment command below for all user to access all pages & function:
-        chain.doFilter(request, response);
+//        chain.doFilter(request, response);
     }
 
     /**
