@@ -182,201 +182,200 @@
                                     </div>
                                 </div>
                             </c:forEach>
-                        </div>
-                            <div class="comment-form">
-                                <h4>Leave a Reply</h4>
-                                <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <textarea name="cmtContent" class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                                          placeholder="Write Comment"></textarea>
-
-                                            </div>
+                        <div class="comment-form">
+                            <h4>Leave a Reply</h4>
+                            <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea name="cmtContent" class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                                      placeholder="Write Comment"></textarea>
                                         </div>
                                     </div>
-                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                            type="submit">Search</button>
-                                </form>
-                            </aside>
-                            <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title">Category</h4>
-                                <ul class="list cat-list">
-                                    <c:forEach items="${parentList}" var="parent">
-                                        <li>
-                                            <a href="Category?cate=${parent.categoryId}" class="d-flex"><p>${parent.getName()}</p></a>
-                                        </li>
-                                        <c:forEach items="${dao.findChildrenCategories(parent)}" var="child">
-                                            <li>
-                                                <a href="Category?cate=${child.categoryId}" class="d-flex"><p>${child.getName()}</p></a>
-                                            </li>
-                                        </c:forEach>
-                                    </c:forEach>
-                                  
-                                </ul>
-                            </aside>
-                            <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title">Recent Post</h3>
-                                <div class="media post_item">
-                                    <img src="img/post/post_1.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>From life was you fish...</h3>
-                                        </a>
-                                        <p>January 12, 2019</p>
-                                    </div>
                                 </div>
-                                <div class="media post_item">
-                                    <img src="img/post/post_2.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>The Amazing Hubble</h3>
-                                        </a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="img/post/post_3.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>Astronomy Or Astrology</h3>
-                                        </a>
-                                        <p>03 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="img/post/post_4.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>Asteroids telescope</h3>
-                                        </a>
-                                        <p>01 Hours ago</p>
-                                    </div>
-                                </div>
-                            </aside>
-                            <aside class="single_sidebar_widget tag_cloud_widget">
-                                <h4 class="widget_title">Tag Clouds</h4>
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">project</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">love</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">technology</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">travel</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">restaurant</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">life style</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">illustration</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <aside class="single_sidebar_widget instagram_feeds">
-                                <h4 class="widget_title">Instagram Feeds</h4>
-                                <ul class="instagram_row flex-wrap">
-                                    <li>
-                                        <a href="#">
-                                            <img class="img-fluid" src="img/post/post_5.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img class="img-fluid" src="img/post/post_6.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img class="img-fluid" src="img/post/post_7.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img class="img-fluid" src="img/post/post_8.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img class="img-fluid" src="img/post/post_9.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img class="img-fluid" src="img/post/post_10.png" alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <aside class="single_sidebar_widget newsletter_widget">
-                                <h4 class="widget_title">Newsletter</h4>
-                                <form action="#">
-                                    <div class="form-group">
-                                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
+                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                type="submit">Search</button>
+                        </form>
+                        </aside>
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Category</h4>
+                            <ul class="list cat-list">
+                                <c:forEach items="${parentList}" var="parent">
+                                    <li>
+                                        <a href="Category?cate=${parent.categoryId}" class="d-flex"><p>${parent.getName()}</p></a>
+                                    </li>
+                                    <c:forEach items="${dao.findChildrenCategories(parent)}" var="child">
+                                        <li>
+                                            <a href="Category?cate=${child.categoryId}" class="d-flex"><p>${child.getName()}</p></a>
+                                        </li>
+                                    </c:forEach>
+                                </c:forEach>
+
+                            </ul>
+                        </aside>
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+                            <div class="media post_item">
+                                <img src="img/post/post_1.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>From life was you fish...</h3>
+                                    </a>
+                                    <p>January 12, 2019</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_2.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>The Amazing Hubble</h3>
+                                    </a>
+                                    <p>02 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_3.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Astronomy Or Astrology</h3>
+                                    </a>
+                                    <p>03 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/post/post_4.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Asteroids telescope</h3>
+                                    </a>
+                                    <p>01 Hours ago</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="single_sidebar_widget tag_cloud_widget">
+                            <h4 class="widget_title">Tag Clouds</h4>
+                            <ul class="list">
+                                <li>
+                                    <a href="#">project</a>
+                                </li>
+                                <li>
+                                    <a href="#">love</a>
+                                </li>
+                                <li>
+                                    <a href="#">technology</a>
+                                </li>
+                                <li>
+                                    <a href="#">travel</a>
+                                </li>
+                                <li>
+                                    <a href="#">restaurant</a>
+                                </li>
+                                <li>
+                                    <a href="#">life style</a>
+                                </li>
+                                <li>
+                                    <a href="#">design</a>
+                                </li>
+                                <li>
+                                    <a href="#">illustration</a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="single_sidebar_widget instagram_feeds">
+                            <h4 class="widget_title">Instagram Feeds</h4>
+                            <ul class="instagram_row flex-wrap">
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="img/post/post_5.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="img/post/post_6.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="img/post/post_7.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="img/post/post_8.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="img/post/post_9.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="img/post/post_10.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="single_sidebar_widget newsletter_widget">
+                            <h4 class="widget_title">Newsletter</h4>
+                            <form action="#">
+                                <div class="form-group">
+                                    <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                                </div>
+                            </form>
                     </div>
                 </div>
-        </section>
-        <!--================ Blog Area end =================-->
+            </div>
+        </div>
+    </section>
+    <!--================ Blog Area end =================-->
 
 
-        <!-- footer start -->
-        <jsp:include page="components/footer.jsp" />
-        <!--/ footer end  -->
+    <!-- footer start -->
+    <jsp:include page="components/footer.jsp" />
+    <!--/ footer end  -->
 
-        <!-- Modal -->
-        <jsp:include page="components/modal.jsp" />
+    <!-- Modal -->
+    <jsp:include page="components/modal.jsp" />
 
-        <!-- JS here -->
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/ajax-form.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/scrollIt.js"></script>
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/nice-select.min.js"></script>
-        <script src="js/jquery.slicknav.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/gijgo.min.js"></script>
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
 
-        <!--contact js-->
-        <script src="js/contact.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="js/jquery.form.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script>
-            var ar = document.getElementsByClassName("comment-list");
-            if (ar.length != 0) {
-                document.getElementById("comment-count").innerHTML = ar.length + " Comments";
-                document.getElementById("comment1").innerHTML = ar.length + " Comments";
-            }
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script>
+        var ar = document.getElementsByClassName("comment-list");
+        if (ar.length != 0) {
+            document.getElementById("comment-count").innerHTML = ar.length + " Comments";
+            document.getElementById("comment1").innerHTML = ar.length + " Comments";
+        }
 
 
-        </script>
-        <script src="js/main.js"></script>
+    </script>
+    <script src="js/main.js"></script>
 
-    </body>
+</body>
 
 </html>
