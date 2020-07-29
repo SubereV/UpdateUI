@@ -20,7 +20,7 @@ public class PostDAO {
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();
-//            String sql = "Insert into post(users_id, title, content, category, location, date_modify) values (?, ?, ?, ?, ?, ?)";
+
             if (backGround == null) {
                 backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
             }
@@ -79,7 +79,6 @@ public class PostDAO {
             SimpleDateFormat dFormate = new SimpleDateFormat("MMM dd yyyy HH:mma");
             Date date = new Date();
             Connection conn = DatabaseHelper.openConnection();
-//            String sql = "Update post set title = ?, content = ?, category = ?, location = ? where post_id = ?";
             if (backGround == null) {
                 backGround = "https://wallpaperplay.com/walls/full/c/7/0/195311.jpg";
             }

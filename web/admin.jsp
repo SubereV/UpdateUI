@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="bradcam_text text-center">
-                            <h2 style="color: whitesmoke">Admin Page</h2>
+                            <h3 style="color: whitesmoke">Admin Page</h3>
                         </div>
                     </div>
                 </div>
