@@ -182,6 +182,8 @@
                                     </div>
                                 </div>
                             </c:forEach>
+                            placeholder="Write Comment"></textarea>
+
                             <div class="comment-form">
                                 <h4>Leave a Reply</h4>
                                 <form class="form-contact comment_form" action="cmt?id=${post.postId}" method="post" id="commentForm">
@@ -212,8 +214,11 @@
                                             <div class="input-group-append">
                                                 <button class="btn" type="button"><i class="ti-search"></i></button>
                                             </div>
+
                                         </div>
                                     </div>
+                                    </div>
+
                                     <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                             type="submit">Search</button>
                                 </form>
@@ -230,8 +235,8 @@
                                                 <a href="Category?cate=${child.categoryId}" class="d-flex"><p>${child.getName()}</p></a>
                                             </li>
                                         </c:forEach>
-                                    </c:forEach>
 
+                                    </c:forEach>
                                 </ul>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">
@@ -244,34 +249,36 @@
                                         </a>
                                         <p>January 12, 2019</p>
                                     </div>
+
                                 </div>
-                                <div class="media post_item">
-                                    <img src="img/post/post_2.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>The Amazing Hubble</h3>
-                                        </a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="img/post/post_3.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>Astronomy Or Astrology</h3>
-                                        </a>
-                                        <p>03 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="img/post/post_4.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="single-blog.html">
-                                            <h3>Asteroids telescope</h3>
-                                        </a>
-                                        <p>01 Hours ago</p>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="media post_item">
+                            <img src="img/post/post_2.png" alt="post">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>The Amazing Hubble</h3>
+                                </a>
+                                <p>02 Hours ago</p>
+                            </div>
+                        </div>
+                        <div class="media post_item">
+                            <img src="img/post/post_3.png" alt="post">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>Astronomy Or Astrology</h3>
+                                </a>
+                                <p>03 Hours ago</p>
+                            </div>
+                        </div>
+                        <div class="media post_item">
+                            <img src="img/post/post_4.png" alt="post">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>Asteroids telescope</h3>
+                                </a>
+                                <p>01 Hours ago</p>
+                            </div>
+
                             </aside>
                             <aside class="single_sidebar_widget tag_cloud_widget">
                                 <h4 class="widget_title">Tag Clouds</h4>
@@ -352,44 +359,46 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!--================ Blog Area end =================-->
+        </div>
+    </section>
+    <!--================ Blog Area end =================-->
 
 
-        <!-- footer start -->
-        <jsp:include page="components/footer.jsp" />
-        <!--/ footer end  -->
 
-        <!-- Modal -->
-        <jsp:include page="components/modal.jsp" />
+    <!-- footer start -->
+    <jsp:include page="components/footer.jsp" />
+    <!--/ footer end  -->
 
-        <!-- JS here -->
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/ajax-form.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/scrollIt.js"></script>
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/nice-select.min.js"></script>
-        <script src="js/jquery.slicknav.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/gijgo.min.js"></script>
+    <!-- Modal -->
+    <jsp:include page="components/modal.jsp" />
 
-        <!--contact js-->
-        <script src="js/contact.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="js/jquery.form.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script>
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script>
                                                    var ar = document.getElementsByClassName("comment-list");
                                                    if (ar.length != 0) {
                                                        document.getElementById("comment-count").innerHTML = ar.length + " Comments";
@@ -397,9 +406,8 @@
                                                    }
 
 
-        </script>
-        <script src="js/main.js"></script>
+    </script>
+    <script src="js/main.js"></script>
 
-    </body>
-
+</body>
 </html>

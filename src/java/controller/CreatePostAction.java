@@ -15,12 +15,20 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author kinvo
  */
 public class CreatePostAction extends ActionSupport {
+    String id; 
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     String title;
     String content;
     int cate;
     String location, backGround;
-
+    
     String url1; 
     public CreatePostAction() {
     }

@@ -61,7 +61,7 @@
                 <div class="row">
                     <form action="createNewPost" id="frm-fr">
                         <div class="form-group" hidden>
-                            <input name="Id" type="text" class="form-control" id="Id" />
+                            <input name="id" type="text" class="form-control" id="Id" />
                         </div>
                         <div class="form-group">
                             <label for="Name" class="required">Tiêu đề:</label>
@@ -111,45 +111,56 @@
                     </form>
                 </div>
             </div>
-        </section>
-        <!-- ================ contact section end ================= -->
+            <%! String s = "final";%>
+            EL: ${s}
+            Scriptlet: <%= s%>
+            <% Integer test = new Integer(8);
+    request.setAttribute("num", test);%>
+            EL: ${num}
 
-        <!-- footer start -->
-        <jsp:include page="components/footer.jsp" />
-        <!--/ footer end  -->
 
-        <!-- Modal -->
-        <jsp:include page="components/modal.jsp"/>
 
-        <!-- JS here -->
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/ajax-form.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/scrollIt.js"></script>
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/nice-select.min.js"></script>
-        <script src="js/jquery.slicknav.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/gijgo.min.js"></script>
+    </body></html>
+</section>
 
-        <!--contact js-->
-        <script src="js/contact.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="js/jquery.form.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/mail-script.js"></script>
+<!-- ================ contact section end ================= -->
 
-        <script src="js/main.js"></script>
-        <script>
+<!-- footer start -->
+<jsp:include page="components/footer.jsp" />
+<!--/ footer end  -->
+
+<!-- Modal -->
+<jsp:include page="components/modal.jsp"/>
+
+<!-- JS here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/gijgo.min.js"></script>
+
+<!--contact js-->
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+
+<script src="js/main.js"></script>
+<script charset="utf-8">
                                 $('#datepicker').datepicker({
                                     iconsLibrary: 'fontawesome',
                                     icons: {
@@ -219,7 +230,7 @@
                                 })();
 
 
-        </script>
-    </body>
+</script>
+</body>
 
 </html>
